@@ -390,21 +390,25 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Mantiene la transición suave */
 }
 
-/* Control de tamaño y color original de los logos */
+/* Regla general (se mantiene como la dejamos) */
 .partner-logo {
-    max-height: 45px !important;         /* Limita la altura para que no se vean gigantes */
-    width: auto !important;              /* Mantiene la proporción perfecta sin deformar */
-    filter: grayscale(0%) !important;    /* Fuerza a quitar el blanco y negro */
-    filter: none !important;              /* Doble seguridad para los colores */
-    opacity: 1 !important;                 /* Brillo al 100% siempre */
-    transition: transform 0.3s ease !important; /* Animación suave */
+    max-height: 45px !important; /* Altura base para todos */
+    width: auto !important;
+    filter: none !important;
+    opacity: 1 !important;
+    transition: transform 0.3s ease !important;
 }
 
-/* La animación chévere al pasar el mouse (Hover) */
+/* Regla específica para FIABCI (Aumentamos el tamaño) */
+.partner-logo.fiabci-logo {
+    max-height: 60px !important; /* Le subimos 15px más de alto para igualar la masa visual circular */
+    transform: translateY(-2px); /* Un pequeño ajuste hacia arriba para centrarlo ópticamente */
+}
+
+/* Mantenemos la animación general */
 .partner-logo:hover {
-    transform: scale(1.08) !important;   /* Flota sutilmente sin romper el diseño */
+    transform: scale(1.08) !important;
 }
-
         /* CLASE CONTROLADORA DE VISIBILIDAD DE IMPRESIÓN */
         .print-only-table-grid {
             display: none; /* Oculta en web */
@@ -709,9 +713,9 @@
 
     <div class="partners-container">
         <div class="partners-grid">
-            <a href="https://fiabci.org/" target="_blank" title="FIABCI International">
-                <img src="Assets/FIABCI.PNG" alt="FIABCI" class="partner-logo">
-            </a>
+            <a href="#" target="_blank">
+    <img src="Assets/fiabci.png" alt="FIABCI International" class="partner-logo fiabci-logo">
+</a>
             <a href="https://www.fedelonjas.org.co/" target="_blank" title="Fedelonjas Colombia">
                 <img src="Assets/Fedelonjas.PNG" alt="Fedelonjas" class="partner-logo">
             </a>
