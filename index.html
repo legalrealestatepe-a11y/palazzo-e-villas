@@ -383,14 +383,18 @@
             gap: 40px;
         }
 
-        .partner-logo {
-            max-width: 140px;
-            height: auto;
-            filter: grayscale(100%) contrast(1.2);
-            opacity: 0.6;
-            transition: all 0.5s ease;
-        }
+        /* El logo mantiene su color y tamaño original siempre */
+.partner-logo {
+    filter: none !important;      /* Quita cualquier efecto de blanco y negro o silueta */
+    opacity: 1 !important;         /* Brillo y color al 100% por defecto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Mantiene la transición suave */
+}
 
+/* La animación chévere al pasar el mouse (Hover) */
+.partner-logo:hover {
+    transform: scale(1.08);        /* Se agranda un poquito de forma elegante al tocarlos */
+    cursor: pointer;
+}
         .partner-logo:hover {
             filter: grayscale(0%);
             opacity: 1;
