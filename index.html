@@ -373,40 +373,46 @@
             border-top: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        .partners-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        /* El logo mantiene su color y tamaño original siempre */
-.partner-logo {
-    filter: none !important;      /* Quita cualquier efecto de blanco y negro o silueta */
-    opacity: 1 !important;         /* Brillo y color al 100% por defecto */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Mantiene la transición suave */
+       /* --- Contenedor General de los Logos --- */
+.partners-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 40px !important; /* Espacio generoso entre logos en PC */
+    padding: 30px 20px !important;
 }
 
-/* --- Regla General de Logos (Escala Uniforme) --- */
+/* --- Control de Tamaño Imponente y Color Real --- */
 .partner-logo {
-    /* Limita la altura para mantener un tamaño fino y profesional */
-    max-height: 48px !important;
-    /* Mantiene la proporción perfecta sin deformar */
-    width: auto !important;
-    /* Brillo y color al 100% siempre */
-    filter: none !important;
-    opacity: 1 !important;
+    height: 55px !important;             /* Les subimos la altura general para que se vean grandes y claros */
+    width: auto !important;               /* Mantiene la proporción perfecta */
+    max-width: 180px !important;          /* Evita que los logos alargados se estiren de más */
+    filter: grayscale(0%) !important;     /* Cero blanco y negro */
+    filter: none !important;               /* Seguridad de color */
+    opacity: 1 !important;                  /* Brillo al 100% */
     transition: transform 0.3s ease !important;
 }
 
-/* --- Animación Hover (Mantenemos la chévere) --- */
+/* Animación sutil al pasar el mouse */
 .partner-logo:hover {
     transform: scale(1.06) !important;
 }
 
+/* --- AJUSTE PERFECTO PARA CELULARES --- */
+@media (max-width: 768px) {
+    .partners-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Cuadrícula perfecta de 2x2 */
+        gap: 25px !important;                              /* Espacio limpio en el celular */
+        justify-items: center !important;
+        align-items: center !important;
+    }
+
+    .partner-logo {
+        height: 45px !important; /* Tamaño ideal y legible para pantallas móviles */
+    }
+}
 /* --- AJUSTES PARA CELULAR (RESPONSIVE) --- */
 @media (max-width: 768px) {
     /* Aseguramos que la grilla de logos se organice bien */
@@ -731,6 +737,7 @@
         <div class="partners-grid">
             <a href="#" target="_blank">
     <img src="Assets/fiabci.png" alt="FIABCI International" class="partner-logo">
+</a>
             <a href="https://www.fedelonjas.org.co/" target="_blank" title="Fedelonjas Colombia">
                 <img src="Assets/Fedelonjas.PNG" alt="Fedelonjas" class="partner-logo">
             </a>
