@@ -390,16 +390,20 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Mantiene la transición suave */
 }
 
+/* Control de tamaño y color original de los logos */
+.partner-logo {
+    max-height: 45px !important;         /* Limita la altura para que no se vean gigantes */
+    width: auto !important;              /* Mantiene la proporción perfecta sin deformar */
+    filter: grayscale(0%) !important;    /* Fuerza a quitar el blanco y negro */
+    filter: none !important;              /* Doble seguridad para los colores */
+    opacity: 1 !important;                 /* Brillo al 100% siempre */
+    transition: transform 0.3s ease !important; /* Animación suave */
+}
+
 /* La animación chévere al pasar el mouse (Hover) */
 .partner-logo:hover {
-    transform: scale(1.08);        /* Se agranda un poquito de forma elegante al tocarlos */
-    cursor: pointer;
+    transform: scale(1.08) !important;   /* Flota sutilmente sin romper el diseño */
 }
-        .partner-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-            transform: scale(1.1);
-        }
 
         /* CLASE CONTROLADORA DE VISIBILIDAD DE IMPRESIÓN */
         .print-only-table-grid {
